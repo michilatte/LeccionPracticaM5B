@@ -30,13 +30,13 @@ public class UsuarioController {
     @Autowired
     UsuarioServiceImpl usuarioService;
 
-    @Operation(summary = "Se obtiene la lista de Usuarios")
+    @Operation(summary = "Obtener lista de Usuarios")
     @GetMapping("/listar")
     public ResponseEntity<List<Usuario>> listaUsuarios() {
         return new ResponseEntity<>(usuarioService.findByAll(), HttpStatus.OK);
     }
 
-    @Operation(summary = "Debe enviar los campos del Usuario")
+    @Operation(summary = "Enviar los campos del usuario")
     @PostMapping("/crear")
     public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario u) {
         return new ResponseEntity<>(usuarioService.save(u), HttpStatus.CREATED);
