@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 
 /**
  *
- * @author 59398
+ * @author USUARIO
  */
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
         @Query(value = "Select * from usuario u where u.nombre = :nombre", nativeQuery = true)
