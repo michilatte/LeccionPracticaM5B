@@ -61,7 +61,7 @@ public class UsuarioController {
         }
     }
 
-    public ResponseEntity<Usuario> elimiarUsuario(@PathVariable Integer id) {
+    public ResponseEntity<Usuario> eliminarUsuario(@PathVariable Integer id) {
         usuarioService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
