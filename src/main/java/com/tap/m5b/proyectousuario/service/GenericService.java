@@ -22,6 +22,4 @@ public interface GenericService <T, ID extends Serializable>{
     public List<T> findByAll();
 
     public void delete(ID id);
-
-
 }

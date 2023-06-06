@@ -1,5 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, cshoose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -10,6 +10,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -43,5 +45,14 @@ public class Usuario {
     
     @Column(name = "estado")
     private int estado;
-
+    
+    //  *   *   *   RELACIONES  *   *   *
+    
+    @ManyToOne
+    @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
+    private Persona persona; //esta persona es la misma que debe estar en el usuario
+    
+    @ManyToOne
+    @JoinColumn(name = "id_rol", referencedColumnName = "id_rol")
+    private Rol rol;
 }
